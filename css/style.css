@@ -9,6 +9,8 @@ body{
     /* background-color: black; */
     background-color: #001829;
     min-width: 480px;
+    perspective: 400px;
+    perspective-origin: 50% 50%;
 }
 
 
@@ -16,67 +18,69 @@ body{
 /* Container */
 
 .container{
+    position: relative;
     width:80%;
     max-width : 900px;
     margin : 0 auto;
     /* background-color: #FF9E16; */
-    background-color: #FFB347;
+    background-image: url(../images/parchemin3.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     height:100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+
+    /* Transformation 3D */
+    /* transform: rotateX(15deg) translateY(-100px) translateZ(40px); */
+    transform: rotateX(25deg) translateY(-140px) translateZ(75px);
+
 }
 
 /* Header général */
 
 header{
-    border-bottom: 1px solid black; 
+    margin : 5% auto 5%;
+    /* border-bottom: 1px solid black; */
+
+    font-family: 'Almendra SC', serif;
+    font-size: 3.5rem;
+    
  }
 
+ .bateauPosition{
+    position: absolute;
+    height: 100px;
+    width: 80px;
+    top: 55%;
+    left: 50%;
+    /* transform-origin: center; */
+    transform: translate(-50%, -50%) rotate3d(1,0,0,25deg);
+    transition: all 4s ease;
+ }
 
-/* Main */
+ /* .container:hover .bateauPosition{
+    transform-origin: bottom center;
+    transform: translate(-50%, -50%) rotate3d(1,0,0,-25deg);
+ } */
 
-main{
-    padding : 2rem;
-    text-align: justify; 
+ .bateauPosition img{
+    object-fit: contain;
+ }
+
+.ilesProjets{
+    position: absolute;
+    height: 100px;
+    width: 270px;
+    top: 70%;
+    left: 50%;
+    transform: rotate(-15deg);
+    /* transition: all 1s ease; */
+}
+
+.ilesProjets:hover+.bateauPosition{
+    transform: translate(90%, 40%) rotate3d(1,0,0,25deg);
 }
 
 
-/* Aside */
-
-aside{
-    border: 1px solid black;
-    background-color: rgb(0, 48, 95);
-    /* color:white; */
-    color:#ffc370;
-    width: 7rem;
-    padding: 1rem;
-    text-align: center;
-    line-height: 1.3;
-    float:right;
-    margin: 0 -2rem .2rem 1rem;
-}
-
-img{
-    width: 2rem;
-    height: 2rem;
-    margin: .5rem auto 0;
-}
-
-aside em{
-    font-style: normal;
-    font-weight: 600;
-    line-height: 1.5;
-}
-
-aside a{
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Footer */
-
-footer{
-    text-align: center;
-    padding : 3rem;
-}
